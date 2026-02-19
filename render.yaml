@@ -24,6 +24,6 @@ services:
         fromService:
           type: web
           name: briefchat-api
-          property: host
+          property: url
     
 version: "1"

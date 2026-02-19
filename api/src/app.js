@@ -26,7 +26,7 @@ app.get('/health', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.send('Event Concept V1 API Running');
+    res.send("Coucou, tu es pas au bonne endroit :3, tu cherche peut être <a href='https://briefchat-web.onrender.com'>ça</a> ?");
 });
 
 module.exports = app;
