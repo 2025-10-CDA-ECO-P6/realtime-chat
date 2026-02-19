@@ -21,9 +21,6 @@ services:
       - key: PORT
         value: 3000
       - key: VITE_API_URL
-        fromService:
-          type: web
-          name: briefchat-api
-          property: url
+        value: https://briefchat-api.onrender.com
     
 version: "1"
