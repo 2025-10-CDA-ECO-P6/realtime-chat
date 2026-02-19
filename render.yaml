@@ -18,6 +18,8 @@ services:
     buildCommand: npm install -g pnpm && pnpm install --shamefully-hoist && pnpm --filter web build
     startCommand: npx serve -s web/dist -l $PORT
     envVars:
+      - key: PORT
+        value: 3000
       - key: VITE_API_URL
         fromService:
           type: web
