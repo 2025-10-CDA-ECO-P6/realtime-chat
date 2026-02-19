@@ -4,15 +4,18 @@ WORKDIR /app
 RUN npm install -g pnpm
 
 
-COPY package.json pnpm-lock.yaml ./
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 COPY web/package.json ./web/
+COPY api/package.json ./api/
 
-RUN pnpm install --frozen-lockfile
+RUN rm pnpm-lock.yaml
+ENV NODE_ENV=development
+RUN pnpm install --shamefully-hoist
 
 COPY web ./web
 
 WORKDIR /app/web
-RUN pnpm build
+RUN ../node_modules/.bin/vite build
 
 FROM nginx:alpine
 
