@@ -24,5 +24,5 @@ services:
           property: host
     # Health check
     healthCheckPath: /health
-
+    
 version: "1"
