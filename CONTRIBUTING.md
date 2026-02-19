@@ -1,16 +1,16 @@
 # Guide de Contribution
 
-Merci de vouloir contribuer à Event Concept V1 ! Voici les règles et conventions à suivre pour maintenir la qualité "Prod-Ready" du projet.
+Merci de vouloir contribuer à BriefChat V1 ! Voici les règles et conventions à suivre pour maintenir la qualité "Prod-Ready" du projet.
 
 ## 🛠 Workflow de Développement
 
-1. **Branchement** : Créez une branche pour chaque feature (`feat/ma-feature`) ou fix (`fix/mon-bug`).
+1. **Branchement** : Créez une branche pour chaque feature (`feat/ma-feature`) ou fix (`fix/mon-bug`) (en théorie, j'ai pas pensé a le faire ^^").
 2. **Commit** : Utilisez des messages clairs (Conventional Commits préférés).
    - `feat: ajout du layout asymétrique`
    - `fix: correction du scroll automatique`
 3. **Pull Request** : Toute modification doit passer par une PR validée par la CI (Lint + Build).
 
-## 🎨 Conventions CSS (SCSS + BEM)
+## Conventions CSS (SCSS + BEM)
 
 Nous utilisons la méthodologie **BEM** (Block Element Modifier) pour nommer nos classes CSS.
 
@@ -27,7 +27,7 @@ Nous utilisons la méthodologie **BEM** (Block Element Modifier) pour nommer nos
 
 **Règle d'or** : Ne jamais utiliser de styles en ligne (inline styles) sauf pour des valeurs dynamiques très spécifiques.
 
-## 🚀 Scripts Disponibles
+## Scripts Disponibles
 
 Depuis la racine du monorepo :
 
@@ -35,6 +35,6 @@ Depuis la racine du monorepo :
 - `pnpm build` : Construit les paquets pour la production.
 - `pnpm lint` : Vérifie la qualité du code (ESLint).
 
-## 🧪 Tests
+## Tests
 
 Pour l'instant, la CI vérifie le linting. Assurez-vous que `pnpm lint` passe avant de pousser votre code.

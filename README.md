@@ -1,9 +1,9 @@
-# Event Concept V1
+# BriefChat V1
 
-> **Startup Événementielle - Proof of Concept (V1)**
-> Plateforme asymétrique de chat en temps réel, conçue pour être "Prod-Ready" dès le premier jour.
+> **Chat en temps réel - Proof of Concept (V1)**
+> Plateforme de chat en temps réel, conçue pour être "Prod-Ready" dès le premier jour.
 
-## 📋 Table des Matières
+## Table des Matières
 
 - [Aperçu](#aperçu)
 - [Architecture](#architecture)
@@ -100,5 +100,5 @@ Le fichier `render.yaml` ("Blueprint") automatise le déploiement.
 
 ---
 
-**Auteur** : Hugo
+**Auteur** : Hugo le goat
 **Licence** : ISC
