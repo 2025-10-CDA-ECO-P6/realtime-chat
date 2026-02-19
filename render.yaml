@@ -2,14 +2,13 @@ services:
   # API Service
   - type: web
     name: briefchat-api
-    env: node
+    env: docker
     plan: free
-    buildCommand: pnpm install && cd api && pnpm install 
-    startCommand: cd api && node src/server.js
+    dockerfilePath: ./api/Dockerfile
+    dockerContext: .
     envVars:
       - key: PORT
-        value: 3000
-    dockerCommand: ./api/Dockerfile 
+        value: 3000 
 
     
   - type: web
