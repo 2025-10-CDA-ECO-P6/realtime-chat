@@ -1,0 +1,19 @@
+// Discord-inspired Palette
+$color-bg: #313338; // Main Chat Background (Light Black)
+$color-surface: #2b2d31; // Sidebar Background (Darker)
+$color-surface-hover: #404249; // Hover state
+$color-text: #f2f3f5; // Primary Text
+$color-text-muted: #949ba4; // Muted Text
+$color-primary: #5865F2; // Blurple
+$color-accent: #23a559; // Green
+$color-danger: #da373c; // Red
+
+$color-nav-bg: #1e1f22; // Far Left Nav Background (Darkest)
+
+// Fonts
+$font-stack: 'Inter', 'gg sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+// Breakpoints
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-desktop: 1024px;

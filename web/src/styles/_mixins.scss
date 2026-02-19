@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+@mixin mobile {
+    @media (max-width: #{$bp-tablet - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$bp-tablet}) {
+        @content;
+    }
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

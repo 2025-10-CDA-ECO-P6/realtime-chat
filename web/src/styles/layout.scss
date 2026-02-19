@@ -1,0 +1,116 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.layout {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: $color-bg;
+    color: $color-text;
+    overflow: hidden;
+
+    @include mobile {
+        flex-direction: column;
+    }
+
+    // Left Sidebar (Rooms/Nav)
+    &__sidebar {
+        width: 240px;
+        background-color: $color-surface;
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+
+        @include mobile {
+            width: 100%;
+            height: 60px;
+            flex-direction: row;
+            align-items: center;
+            padding: 0 1rem;
+        }
+    }
+
+    &__brand {
+        height: 48px;
+        display: flex;
+        align-items: center;
+        padding: 0 16px;
+        font-weight: 700;
+        font-size: 1rem;
+        color: $color-text;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+        margin-bottom: 8px;
+    }
+
+    &__nav {
+        flex: 1;
+        overflow-y: auto;
+        padding: 8px;
+
+        // Scrollbar styling for webkit
+        &::-webkit-scrollbar {
+            width: 8px;
+            background-color: $color-surface;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #1a1b1e;
+            border-radius: 4px;
+        }
+
+        @include mobile {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            padding: 0;
+            gap: 1rem;
+        }
+    }
+
+    // Main Chat Area
+    &__main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background-color: $color-bg;
+        min-width: 0; // Prevent flex overflow
+    }
+
+    &__header {
+        height: 48px;
+        display: flex;
+        align-items: center;
+        padding: 0 16px;
+        font-weight: 600;
+        font-size: 1rem;
+        color: $color-text;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+        background-color: $color-bg;
+
+        svg {
+            margin-right: 8px;
+            color: $color-text-muted;
+        }
+    }
+
+    &__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        position: relative;
+    }
+
+    // Right Sidebar (User List)
+    &__sidebar-right {
+        width: 240px;
+        background-color: $color-surface;
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+
+        @include mobile {
+            display: none; // Hidden on mobile unless toggled (not implemented for V1)
+        }
+    }
+}

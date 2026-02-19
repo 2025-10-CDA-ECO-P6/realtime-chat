@@ -1,0 +1,29 @@
+services:
+  # API Service
+  - type: web
+    name: briefchat-api
+    env: node
+    plan: free
+    buildCommand: pnpm install && cd api && pnpm install 
+    startCommand: cd api && node src/server.js
+    envVars:
+      - key: PORT
+        value: 3000
+    dockerCommand: ./api/Dockerfile 
+
+    
+  - type: web
+    name: briefchat-web
+    env: docker
+    dockerfilePath: ./web/Dockerfile
+    dockerContext: .
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: briefchat-api
+          property: host
+    # Health check
+    healthCheckPath: /health
+
+version: "1"
