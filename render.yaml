@@ -2,27 +2,26 @@ services:
   # API Service
   - type: web
     name: briefchat-api
-    env: docker
+    env: node
     plan: free
-    dockerfilePath: ./api/Dockerfile
-    dockerContext: .
+    buildCommand: npm install -g pnpm && pnpm install --shamefully-hoist
+    startCommand: node api/src/server.js
     envVars:
       - key: PORT
-        value: 3000 
+        value: 3000
 
-    
+  # Frontend Service 
   - type: web
     name: briefchat-web
-    env: docker
-    dockerfilePath: ./web/Dockerfile
-    dockerContext: .
+    env: node
+    plan: free
+    buildCommand: npm install -g pnpm && pnpm install --shamefully-hoist && pnpm --filter web build
+    startCommand: npx serve -s web/dist -l $PORT
     envVars:
       - key: VITE_API_URL
         fromService:
           type: web
           name: briefchat-api
           property: host
-    # Health check
-    healthCheckPath: /health
     
 version: "1"
